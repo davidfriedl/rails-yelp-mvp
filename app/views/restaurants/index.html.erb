@@ -1,0 +1,19 @@
+<div class="container">
+  <h1 style="border-bottom: 0.2px solid grey">Selection of restaurants</h1>
+  <br>
+  <ul style="list-style: none; padding-left: 0;">
+    <% @restaurants.each do |restaurant| %>
+      <li>
+        <strong>
+          <%= link_to restaurant.name, restaurant_path(restaurant) %>
+        </strong>
+        <%= restaurant.category %>, located in <em><%= restaurant.address %></em>
+      </li>
+    <% end %>
+  </ul>
+
+  <p>Didn't find your favorite restaurant?</p>
+  <p><%= link_to "create it!", new_restaurant_path, class: "btn btn-primary"  %></p>
+
+</div>
+

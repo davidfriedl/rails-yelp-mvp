@@ -1,0 +1,16 @@
+<div class="container">
+  <h1>Add a restaurant</h1>
+  <%= simple_form_for(@restaurant) do |f| %>
+  <%= f.label :name %>
+  <%= f.input :name, label:false, placeholder: "Name", input_html: {style: 'width: 350px'} %>
+  <%= f.label :category %>
+  <%= f.input :category, label:false, placeholder: "Category (i.e. french, italian, chinese, ...)", input_html: {style: 'width: 350px'} %>
+  <%= f.label :address %>
+  <%= f.input :address, label:false, placeholder: "City", input_html: {style: 'width: 350px'} %>
+  <%= f.label :phone_number %>
+  <%= f.input :phone_number, label:false, placeholder: "phone number", input_html: {style: 'width: 350px'} %>
+  <br>
+  <br>
+  <%= f.submit "add restaurant", class: "btn btn-primary" %>
+  <% end %>
+</div>

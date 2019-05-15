@@ -1,0 +1,37 @@
+<div class="container">
+  <h1 style="border-bottom: 0.2px solid grey">Welcome to <%= @restaurant.name %></h1>
+  <br>
+  <p>We serve <em><%=  @restaurant.category%></em> food</p>
+  <p>You can find us in the lovely city of <%= @restaurant.address %></p>
+
+  <% if @restaurant.phone_number != nil%>
+    <p>Call us at <%= @restaurant.phone_number %></p>
+  <% else %>
+    <p>You can't call us. We don't have a phone number.</p>
+  <% end %>
+  <br>
+
+  <h4 style="border-bottom: 0.2px solid grey">Reviews</h4>
+  <br>
+  <ul style="list-style: none; padding-left: 0;">
+    <% @restaurant.reviews.each do |review| %>
+      <li>
+        <em><%= review.content %> </em> <br>
+        <p style="font-size:11px;">Rating: <%= review.rating %></p>
+       </li>
+    <% end%>
+  </ul>
+  <br>
+  <br>
+  <%= link_to "write review", new_restaurant_review_path(@restaurant), class: "btn btn-success" %>
+  <br>
+  <br>
+  <div style="border-bottom: 0.2px solid grey; margin-bottom: 25px;"></div>
+  <%= link_to "back to home", restaurants_path, class: "btn btn-primary" %>
+
+</div>
+
+
+
+
+
